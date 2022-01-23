@@ -1,0 +1,2 @@
+# BlurLyric
+一个用于Neteasecloudmusicapi的UI
