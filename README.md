@@ -1,2 +1,5 @@
 # BlurLyric
 一个用于Neteasecloudmusicapi的UI
+
+# 如何使用？
+丢掉到NeteaseCloudMusicApi环境里，然后复制上面的源码到public文件夹里就好啦
