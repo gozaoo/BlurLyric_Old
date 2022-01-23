@@ -1,0 +1,124 @@
+.selectbar{
+    position: fixed;
+    border-radius: 11px;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,-100px);
+    opacity: 0.5;
+    width: max-content;
+    transition: all 0.2s cubic-bezier(.20,.60,.4,1);
+    z-index: 6;
+}
+
+.musicbuttom{
+    height: 24px;
+    width: 24px;
+    padding: 5px;
+    border-radius: 9px;
+    background: rgb(233,233,233);
+    transition: all 0.2s cubic-bezier(.20,.60,.4,1);
+    float: left;
+    margin-right: 6px;
+}
+
+.musicbuttom:hover{
+    background: rgb(167, 167, 167);
+}
+
+.musicbuttom img {
+    height: 24px;
+    width: 24px;
+}
+.slider{
+    height: 34px;
+    width: 240px;
+    border-radius: 9px;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.2s cubic-bezier(.20,.60,.4,1);
+    float: left;
+    margin-right: 8px;
+}
+.slider > .processor{
+    
+    height: 34px;
+    max-width: 240px;
+    width: 0px;
+    
+    float: left;
+    overflow: hidden;
+    z-index: 2;
+}
+.slider > .controller{
+    opacity: 0;
+    height: 34px;
+    
+    z-index: 3;
+    width: 8px;
+    transition: all 0.2s cubic-bezier(.20,.60,.4,1);
+    background: rgb(241,243,245);
+}
+.slider:hover > .controller{
+    opacity: 1;
+}
+#audioTime{
+    pointer-events: none;
+    position: absolute;
+    width: 240px;
+    line-height: 34px;
+    text-align: center;
+    color: white;
+    z-index: 5;
+
+}
+.titlebar{
+    background-color: rgba(246, 246, 255,.75);
+    position: fixed;
+    border-radius: 11px;
+    padding: 6px 15px 6px 6px;
+    left: 50%;
+    transform: translate(-50%,20px);
+    opacity: 0.8;
+    width: max-content;
+    transition: all 0.2s cubic-bezier(.20,.60,.4,1);
+    z-index: 4;
+}
+.titlebar div{
+    float: left;
+}
+.titlebackblur,.titleMusicImage{
+    width: 54px;
+    height: 54px;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    border-radius: 9px;
+}
+.titlebackblur{
+    position: absolute;
+    z-index: -1;
+    filter: brightness(2) blur(3mm);
+}
+.titleMusicImage{
+    border-radius: 9px;
+    margin-right: 6px;
+}
+.titleText{
+    min-width: 190px;
+    height: 54px;
+    padding-left: 10px;
+    
+}
+.selectbar:hover,#playerBox:hover,.titlebar:hover{
+    opacity: 1.0;
+}
+.titleText div{
+    float: none;
+    padding-top: 1px;
+}
+#titleMusicName{
+    font-size: 20px;
+}
+#titleMusicACb{
+    color: #555;
+}

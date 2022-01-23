@@ -1,0 +1,238 @@
+@font-face {
+
+    /* font-properties */
+
+    font-family: font;
+
+    src:url(../font/HarmonyOS_Sans_SC_Medium.ttf);/*url(../font/HarmonyOS_Sans_SC_Black.ttf),
+    
+    url(../font/HarmonyOS_Sans_SC_Bold.ttf),
+    url(../font/HarmonyOS_Sans_SC_Medium.ttf),
+    url(../font/HarmonyOS_Sans_SC_Regular.ttf),
+    url(../font/HarmonyOS_Sans_SC_Thin.ttf),
+    url(../font/HarmonyOS_Sans_SC_Light.ttf);  IE9 */
+    
+
+}
+@font-face {
+
+    /* font-properties */
+
+    font-family: Bahnschrift;
+
+    src:url(../font/bahnschrift.ttf);/*url(../font/HarmonyOS_Sans_SC_Black.ttf),
+    
+    url(../font/HarmonyOS_Sans_SC_Bold.ttf),
+    url(../font/HarmonyOS_Sans_SC_Medium.ttf),
+    url(../font/HarmonyOS_Sans_SC_Regular.ttf),
+    url(../font/HarmonyOS_Sans_SC_Thin.ttf),
+    url(../font/HarmonyOS_Sans_SC_Light.ttf);  IE9 */
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Bahnschrift,font;
+}
+button{
+    font-family: Bahnschrift,font;
+}
+body::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 12px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 16px;
+    border-radius: 0x;
+    background: rgb(104, 104, 104);
+}
+body::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 0px;
+    background: rgba(255,255,255,0.45);
+}
+body::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    border-radius: 0px;
+    background: rgb(104, 104, 104);
+}
+.topbar{
+    backdrop-filter: blur(36px) brightness(1.6);
+    height: 54px;
+    overflow: hidden;
+    min-width: 600px;
+    background-color: #fff;
+    
+}
+.topbarIndex{
+    padding: 0px 10vw 0px 10vw
+}
+
+@media (max-width: 1336px) {
+    .topbarIndex {
+        padding: 0px 5vw 0px 5vw
+    }
+}
+
+@media (max-width: 580px) {
+    .topbarTitle {
+        display: none;
+    }
+
+    .index-grid-row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid-row-songs{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.topbarTitle{
+    line-height: 54px;
+    font-family: 'Bahnschrift';
+    font-size: 24px;
+    pointer-events: none;
+    float: left;
+}
+.topbarTitle::after{
+    border-left: 3px solid #000;
+    height: 24px;
+    content: "";
+    margin: 0 24px;
+}
+
+.topbarBuLefHead{
+    padding: 10px 8px 0 8px;
+    margin: 0 4px;
+    line-height: 34px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.topbarBuLef{
+    padding: 10px 8px 0 8px;
+    margin: 0 4px;
+    line-height: 34px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+
+.topbarBuRi{
+    padding: 10px 8px 0 8px;
+    margin: 0 4px;
+    line-height: 34px;
+    font-size: 16px;
+    display: inline-block;
+    float: right;
+}
+.hoverunderline:hover{
+    border-bottom: 2px solid #000;
+}
+
+.link{
+    border-bottom: 2px solid #000;
+    color: #000;
+}
+.link:hover{
+    border-bottom: 2px solid #fff;
+}
+::selection {
+    background:rgb(127, 85, 255);
+    color:#fff;
+    text-shadow: 0px 0px 0px #fff; /* 文本颜色 */ 
+}
+.button{
+    background: rgba(0,103,184);
+    border: 0;
+    padding: 8px 20px 8px 20px;
+    font-size: 18px;
+    font-family: '黑体';
+    color: #fff;
+}
+
+.button:hover{
+    border: 2px solid #000;
+    padding: 6px 18px 6px 18px;
+}
+
+.button:active{
+    border: 2px solid #fff;
+    padding: 6px 18px 6px 18px;
+}
+
+/*包含以下五种的链接*/
+a {
+    text-decoration: none;
+}
+/*正常的未被访问过的链接*/
+a:link {
+    text-decoration: none;
+}
+/*已经访问过的链接*/
+a:visited {
+    text-decoration: none;
+}
+/*鼠标划过(停留)的链接*/
+a:hover {
+    text-decoration: none;
+}
+/* 正在点击的链接，鼠标在元素上按下还没有松开*/
+a:active {
+    text-decoration: none;
+}
+/* 获得焦点的时候 鼠标松开时显示的颜色*/
+a:focus {
+    text-decoration: none;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)scale(2);
+    z-index: 4;
+    position: fixed;
+    transition: all 0.6s cubic-bezier(0.000, 0.4, 0.5, 1);;
+}
+
+.double-bounce1,
+.double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #67CF22;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
+    }
+
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}

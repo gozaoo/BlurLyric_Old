@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable,maximum-scale=1.0, width=device-width, initial-scale=1.0">
+    <title>BlurLyric</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/plyr.css">
+    <link rel="stylesheet" href="../css/SearchBar.css">
+    <link rel="stylesheet" type="text/css" href="../css/playlist.css">
+    <link rel="stylesheet" href="../css/topbar.css">
+    <link rel="stylesheet" href="../css/selectbar.css">
+    <link rel="stylesheet" type="text/css" href="../css/lrc.css">
+</head>
+
+<body>
+    <div class="bg1"></div>
+    <div style="
+        position: fixed;
+        border-radius: 11px;
+        width: max-content;
+        transition: all 0.2s cubic-bezier(.20,.60,.4,1);
+        z-index: 102;
+        padding: 6px;
+        opacity: 1.0;
+        top: 4px;
+        left: 100%;
+        transform: translate(-60px,0);
+        ">
+        <div onclick="ud()" class="musicbuttom" id="musicplay" style="margin: 0;">
+            <img src="../image/ud.png" alt="">
+        </div>
+    </div>
+    <div id="playerBox">
+        <div class="topbar">
+            <div class="topbarIndex">
+                <div class="topbarTitle">BlurLyric</div>
+                <div class="topbarBuLefHead"><img src="" alt=""></div>
+                <input onkeydown="kydone(event);" id="musicInput" type="text" placeholder="请输入音乐">
+            </div>
+        </div>
+        <div id="playerBoxIndex">
+            <div class="playlist-info">
+                <div class="playlist-img"> <img id="listImgUrl" width="100%" src="" alt=""> </div>
+                <div class="playlist-info-text">
+                    <div id="listTitle" class="playlist-info-title"></div>
+                    <div class="playlist-info-aritst"><a id="listAritst"></a> </div>
+                    <div id="listDescription" class="playlist-info-description"> </div>
+                    <div class="playlist-info-c"><button id="playlistPlaybutton"">播放此歌单</button> </div>
+                </div>
+            </div>
+            <div id="playlist-index-grid-row"></div>
+        </div>
+    </div>
+    <div id="background" class="background">
+
+        <div class="bgFlex">
+            <div class="bgFlexItem">
+                <div class="bgFlexItemLeftBox">
+                    <div class="bgFlexItemLeftBoxDisplay">
+                        <div class="bgFlexItemLeftBoxImage">
+                            <div class="image1box"><img width="100%" src="" alt="" srcset="" id="image1"></div>
+                            <img width="100%" src="" alt="" srcset="" id="image2">
+                            <img width="100%" src="" alt="" srcset="" id="image3">
+                        </div>
+                        <div class="bgFlexItemLeftBoxText">
+
+                            <div><a id="bgFlexItemLeftTitle" href="">请选择您的音乐。</a></div>
+                            <div class="bgFlexItemLeftOther">
+                                <div><a id="bgFlexItemLeftSinger" href=""></a></div>&nbsp-&nbsp
+                                <div><a id="bgFlexItemLeftzjm" href=""></a></div>
+                            </div>
+
+                        </div>
+                        <div class="bgFlexItemLeftBoxText bgFlexItemLeftBoxLyric">
+
+                            <a id="bgFlexItemLeftLyric">a</a>
+
+                        </div>
+                        <audio controls oncanplaythrough='player.play()' οnended="audioFinish()" src=""
+                            id="audio"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="bgFlexItem bgFlexItemRiBox">
+                <ul id="lyric"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/plyr.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+
+
+
+    </script>
+    <script src="../js/playerbuttom.js"></script>
+    <script src="../js/lrcToJson.js"></script>
+    <script src="../js/playerMusic.js"></script>
+
+</body>
+
+</html>

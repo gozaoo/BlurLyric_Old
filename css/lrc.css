@@ -1,0 +1,138 @@
+body{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	min-width: 670px;
+	
+    font-family: Bahnschrift,font;
+}
+
+@font-face {
+
+    /* font-properties */
+
+    font-family: font;
+
+    src:url(../font/HarmonyOS_Sans_SC_Medium.ttf);/*url(../font/HarmonyOS_Sans_SC_Black.ttf),
+    
+    url(../font/HarmonyOS_Sans_SC_Bold.ttf),
+    url(../font/HarmonyOS_Sans_SC_Medium.ttf),
+    url(../font/HarmonyOS_Sans_SC_Regular.ttf),
+    url(../font/HarmonyOS_Sans_SC_Thin.ttf),
+    url(../font/HarmonyOS_Sans_SC_Light.ttf);  IE9 */
+    
+
+}
+@font-face {
+
+    /* font-properties */
+
+    font-family: Bahnschrift;
+
+    src:url(../font/bahnschrift.ttf);/*url(../font/HarmonyOS_Sans_SC_Black.ttf),
+    
+    url(../font/HarmonyOS_Sans_SC_Bold.ttf),
+    url(../font/HarmonyOS_Sans_SC_Medium.ttf),
+    url(../font/HarmonyOS_Sans_SC_Regular.ttf),
+    url(../font/HarmonyOS_Sans_SC_Thin.ttf),
+    url(../font/HarmonyOS_Sans_SC_Light.ttf);  IE9 */
+}
+
+
+
+html,body{height:100%;overflow:hidden;}
+
+
+.lyric_area{
+	position: absolute;
+	height:	100%;
+	
+}
+#lyric{
+	float: left;
+	list-style-type:none;
+	padding-left: 0px;
+	transition: all 1.2s cubic-bezier(.3,.45,.2,.95);
+	font-size: 30px;
+	height:100%;
+	color: rgb(160, 160, 160);
+	transform: translateX(50px);
+	margin-left:0px;	
+}
+
+.winbox.my-theme{
+    background: #fff;
+	z-index: 201;
+	
+    shadow: 0px 0px 4px #7e7e7e;
+}
+.winbox .MV{
+	height:inherit;
+	width: 100%;
+}
+.winbox.my-theme .wb-body {
+    color: #fff;
+    background: #131820;
+}
+.winbox.my-theme .wb-title {
+    color: #000;
+}
+.winbox.my-theme .wb-icon {
+    filter: invert(1);
+}
+
+#lyric li {
+	transition: all 1.2s ,color 0s,background .2s cubic-bezier(0.30, 0.50, 0.25, 0.90), width 0s;
+	filter: blur(4px);
+	background-image: linear-gradient(to right,rgba(255,255,255,.0),rgba(255,255,255,.0),rgba(255,255,255,.0));
+	margin-top: 30px;
+	display: block;
+	min-height: 36px;
+	border-radius: 11px;
+	padding: 15px 20px;
+	text-shadow: 0 0 15px rgba(100,100,100,0.1);;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#lyric li:hover {
+	filter: blur(0px);
+	background: rgba(255,255,255, 0.08);
+	transition: all 1.2s,filter .4s cubic-bezier(0.30, 0.50, 0.25, 0.90),color 0s,background .15s cubic-bezier(0.30, 0.50, 0.25, 0.90), width 0s;
+}
+#lyric li div{
+	position: absolute;
+	width: 170px;
+	left: 100% ;
+	padding: 5px;
+	vertical-align:middle;display:table-cell;
+	background-image: linear-gradient(to left bottom,rgba(255,255,255,.0),rgba(255,255,255,.0),rgba(255,255,255,.0),rgba(255,255,255,0),rgba(255,255,255,0),rgba(255,255,255,.0),rgba(255,255,255,0));
+	filter: blur(6px);
+	transform: translate(-50%,-15px);
+	pointer-events: none;
+	height: 150%;
+	color: rgb(160, 160, 160,0);
+	text-align: end;
+	transition: all .3s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+}
+#lyric li:hover div{
+	background-image: linear-gradient(to left bottom,rgba(255,255,255,.18),rgba(255,255,255,.08),rgba(255,255,255,.02),rgba(255,255,255,0),rgba(255,255,255,0),rgba(255,255,255,.0),rgba(255,255,255,0));
+	color: rgb(180, 180, 180,1);
+	transform: translate(-100%,-15px);
+	filter: blur(0px);
+}
+#lyric .lineHigh{
+	
+	filter: blur(0px);
+	color: #fff;
+}
+
+#lyric .lineNext_1{
+	filter: blur(1px);
+}
+
+#lyric .lineHigh{
+	filter: blur(0px);
+}
+
+

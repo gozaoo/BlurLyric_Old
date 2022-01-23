@@ -1,0 +1,337 @@
+#playerBox {
+    background-color: #fff;
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 25px 0;
+    transform: translate(0, -25px) scale(1);
+    opacity: 1;
+    position: fixed;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+    transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+}
+
+#playerBoxIndex {
+    padding: 0px 10vw 96px 10vw;
+    background-color: white;
+    height: calc(100% - 108px);
+    overflow-y: auto;
+}
+
+@media (max-width: 1336px) {
+    #playerBoxIndex {
+        padding: 0px 5vw 96px 5vw;
+
+    }
+
+    .topbarIndex {
+        padding: 0px 5vw 0px 5vw
+    }
+}
+
+.backlab {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 230px;
+    width: calc(100% + 14vw);
+    padding: 0 10px;
+    transform: translate(-7vw, 0);
+    transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+}
+
+.backlab::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 8px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 10px;
+    padding: 0 0px;
+    transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+}
+
+.backlab::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    width: 8px;
+    background-color: rgb(61, 61, 61);
+    transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+}
+
+.backlab::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+}
+
+#musicInput {
+    height: 36px;
+    border-radius: 11px;
+    margin: 9px 0;
+    background-color: rgba(246, 246, 255, 1.0);
+    padding: 0 12px;
+    outline: none;
+    border: 0;
+    transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+    width: 200px;
+}
+
+.mulabone {
+    margin: 8px 10px;
+    border-radius: 11px;
+    padding: 0px 0px 0 0px;
+    background: rgba(0, 0, 0, 0.08);
+    height: 200px;
+    width: max-content;
+    background: no-repeat center center;
+    background-size: cover;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+    animation: example10001 0.6s cubic-bezier(0.35, 0.60, 0.15, 1.30);
+}
+
+.mulabone:hover {
+    transform: scale(1.05);
+}
+
+.mulabonea {
+    margin: 0 0 0 20px;
+    font-size: 18px;
+    height: 0;
+    z-index: 2;
+    color: white;
+    padding-top: 150px;
+    transition: all 0.3s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+
+}
+
+.mulabonec {
+    font-size: 18px;
+    overflow: hidden;
+    margin: 0 100px 0 20px;
+    height: 0;
+    z-index: 2;
+    color: white;
+}
+
+.mulaboneb::before {
+    content: "  ";
+}
+
+.mulaboneb {
+    vertical-align: middle;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+    white-space: nowrap;
+    color: white;
+}
+
+.bg3 {
+    border-radius: 11px;
+    height: 200px;
+    backdrop-filter: brightness(0.8) blur(3px);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+    -moz-background-color: rgba(0, 0, 0, .2);
+}
+
+@keyframes example10001 {
+    0% {
+        transform: translate(20px, 0px);
+        opacity: .5;
+    }
+
+    100% {
+        transform: translate(0, 0px);
+        opacity: 1.;
+    }
+
+}
+
+.row-index {
+    margin-top: 24px;
+}
+
+.row-index h1 {
+    margin: 0 0 16px 0;
+}
+
+.index-grid-row {
+    display: grid;
+    text-overflow: ellipsis;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 44px 24px;
+
+}
+
+.grid-item {
+    padding: 0 0 25px 0;
+    border-radius: 11px;
+
+}
+
+.grid-item:hover {
+    text-decoration:underline;
+}
+
+.grid-item-image {
+    background-color: rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    font-size: 0px;
+    
+    border-radius: 11px;
+}
+.grid-item-image img{
+    border-radius: 11px;
+    transition: all .2s cubic-bezier(.3,.45,.2,.95);
+}
+.grid-item:hover .grid-item-image img {
+transform: scale(1.1);
+}
+.grid-item h2 {
+    margin: 10px 0px 0 0px;
+    font-size: 20px;
+    user-select: none;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.grid-item h3 {
+    margin: 0px 0px 0 0px;
+    font-size: 14px;
+    color: #666;user-select: none;;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.musicList-index-grid-row {
+    display: grid;
+    text-overflow: ellipsis;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px 25px;
+
+}
+
+.grid-row-songs {
+    display: grid;
+    text-overflow: ellipsis;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.grid-row-songs::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 8px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 10px;
+    padding: 0 0px;
+    transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+}
+
+.grid-row-songs::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+}
+
+@media (max-width: 1500px) {
+    .grid-row-songs {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .musicList-index-grid-row{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1300px) {
+    .grid-row-songs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .musicList-index-grid-row{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 750px) {
+
+    .grid-row-songs{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .musicList-index-grid-row{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 580px) {
+    .grid-row-songs {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .musicList-index-grid-row{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.grid-item-line {
+    overflow: hidden;
+    user-select: none;
+    display: flex;
+    padding: 8px;
+    overflow: hidden;
+
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: #00000003;
+    height: 42px;
+    max-height: 48px;
+    border-radius: .75em;
+    word-wrap: none;
+    gap: 8px;
+}
+
+.grid-item-line:hover {
+    background-color: #0000002f;
+}
+
+.grid-item-line img {
+    border-radius: .75em;
+}
+
+.grid-item-line-text {
+    height: 42px;
+    font-size: 15px;
+}
+
+.grid-item-line-text div {
+    display: block;
+    overflow: hidden;
+    width: initial;
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    -o-text-overflow: ellipsis;
+    font-size: 15px;
+}
+
+.grid-item-line-text a {
+    display: block;
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    -o-text-overflow: ellipsis;
+    color: #666;
+    font-size: 15px;
+}
