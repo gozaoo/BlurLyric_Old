@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable,maximum-scale=1.0, width=device-width, initial-scale=1.0">
     <title>BlurLyric</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/plyr.css">
-    <link rel="stylesheet" href="../css/SearchBar.css">
-    <link rel="stylesheet" type="text/css" href="../css/playlist.css">
-    <link rel="stylesheet" href="../css/topbar.css">
-    <link rel="stylesheet" href="../css/selectbar.css">
-    <link rel="stylesheet" type="text/css" href="../css/lrc.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/plyr.css">
+    <link rel="stylesheet" href="./css/SearchBar.css">
+    <link rel="stylesheet" type="text/css" href="./css/playlist.css">
+    <link rel="stylesheet" href="./css/topbar.css">
+    <link rel="stylesheet" href="./css/selectbar.css">
+    <link rel="stylesheet" type="text/css" href="./css/lrc.css">
+    <link rel="stylesheet" href="./css/prof.css">
 </head>
 
 <body>
@@ -37,21 +38,35 @@
         <div class="topbar">
             <div class="topbarIndex">
                 <div class="topbarTitle">BlurLyric</div>
-                <div class="topbarBuLefHead"><img src="" alt=""></div>
+                <div>
+                    <div class="topbarBuLefHead">
+
+                        <img onerror="this.src='http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60'"
+                            id="HeadImg" width="100%" src="1" alt="">
+                    </div>
+                    <div class="HeadInfo">
+                        <div
+                            style="transform: translate(-8px,-8px);border-radius: 11px;position: absolute;width: calc(100%);height: calc(100%);z-index: -1;backdrop-filter: blur(8px);">
+                        </div>
+                        <div style="display: flex;margin-bottom: 8px;"><img
+                                onerror="this.src='http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60'"
+                                id="HeadInfoImg" src="1" alt="">
+                            <div id="HeadInfoNickName"></div>
+                        </div>
+                        <div class="HeadInfoButtom">
+                            <div onclick="loginGui()" id="loginButton"><img src="./icons/login.svg" alt="">登录</div>
+                            <div onclick="mySelfGui()" id="myButton"><img src="./icons/myself.svg" alt="">个人主页</div>
+                            <div onclick="window.open(cloud + 'logout');" id="logoutButton"><img
+                                    src="./icons/logout.svg" alt="">退出登录</div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <input onkeydown="kydone(event);" id="musicInput" type="text" placeholder="请输入音乐">
             </div>
         </div>
         <div id="playerBoxIndex">
-            <div class="playlist-info">
-                <div class="playlist-img"> <img id="listImgUrl" width="100%" src="" alt=""> </div>
-                <div class="playlist-info-text">
-                    <div id="listTitle" class="playlist-info-title"></div>
-                    <div class="playlist-info-aritst"><a id="listAritst"></a> </div>
-                    <div id="listDescription" class="playlist-info-description"> </div>
-                    <div class="playlist-info-c"><button id="playlistPlaybutton"">播放此歌单</button> </div>
-                </div>
-            </div>
-            <div id="playlist-index-grid-row"></div>
         </div>
     </div>
     <div id="background" class="background">
@@ -66,7 +81,6 @@
                             <img width="100%" src="" alt="" srcset="" id="image3">
                         </div>
                         <div class="bgFlexItemLeftBoxText">
-
                             <div><a id="bgFlexItemLeftTitle" href="">请选择您的音乐。</a></div>
                             <div class="bgFlexItemLeftOther">
                                 <div><a id="bgFlexItemLeftSinger" href=""></a></div>&nbsp-&nbsp
@@ -90,16 +104,14 @@
         </div>
     </div>
 
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
     <script src="./js/plyr.js"></script>
     <script src="./js/main.js"></script>
-    <script>
-
-
-
-    </script>
-    <script src="../js/playerbuttom.js"></script>
-    <script src="../js/lrcToJson.js"></script>
-    <script src="../js/playerMusic.js"></script>
+    <script src="./js/playerbuttom.js"></script>
+    <script src="./js/lrcToJson.js"></script>
+    <script src="./js/playerMusic.js"></script>
+    <script src="./js/login.js"></script>
 
 </body>
 

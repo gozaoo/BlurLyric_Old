@@ -19,6 +19,7 @@
     background-color: white;
     height: calc(100% - 108px);
     overflow-y: auto;
+    z-index: 199;
 }
 
 @media (max-width: 1336px) {
@@ -64,7 +65,7 @@
     /*滚动条里面轨道*/
 }
 
-#musicInput {
+#musicInput,input{
     height: 36px;
     border-radius: 11px;
     margin: 9px 0;
@@ -229,7 +230,7 @@ transform: scale(1.1);
     overflow-y: auto;
 }
 
-.grid-row-songs::-webkit-scrollbar {
+::-webkit-scrollbar {
     /*滚动条整体样式*/
     width: 8px;
     /*高宽分别对应横竖滚动条的尺寸*/
@@ -238,7 +239,7 @@ transform: scale(1.1);
     transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
 }
 
-.grid-row-songs::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     /*滚动条里面小方块*/
     border-radius: 5px;
     width: 8px;
@@ -296,10 +297,11 @@ transform: scale(1.1);
     border-radius: .75em;
     word-wrap: none;
     gap: 8px;
+    box-shadow: 0 6px 12px -4px rgb(0 0 0 / 8%);
 }
 
 .grid-item-line:hover {
-    background-color: #0000002f;
+    background-color: #0000000e;
 }
 
 .grid-item-line img {
