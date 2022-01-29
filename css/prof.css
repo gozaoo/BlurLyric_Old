@@ -5,17 +5,32 @@
 .prf-User-Top-Title {
     user-select: none;
     display: flex;
-    height: 80px;
+    height: max-content;
     margin: 20px 0;
     gap: 20px;
 }
-
+#largerUserHeadImg{
+    max-width: 100px;
+    max-height: 100px;
+}
 .prf-mainBox {
     display: flex;
+    width: 100%;
+    overflow-y: unset;
+    overflow-x: auto;
+    padding: 10px 10vw 10px 10wv;
+    height: max-content;
     gap: 20px;
+    transform: translateX(-10vm);
     grid-template-columns: repeat(2, 1fr);
 }
 
+@media (max-width: 1336px) {
+    .prf-mainBox {
+        padding: 10px 5vw 10px 5vw;
+        transform: translateX(-5vw);
+    }
+}
 .prf-mainBox>div {}
 .row-Mylove{
     width: 250px;
@@ -55,6 +70,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     font-size: 48px;
+    line-height: 53px;
     z-index: 0;
     padding: 20px;
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);

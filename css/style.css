@@ -146,7 +146,27 @@ a:link:hover {
     border-radius: 11px;
     
 }
-
+.bgFlexItemLeftBoxButton{
+    height: fit-content;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    height: 36px;
+    background: #fff;
+    background-color: rgba(246, 246, 255, .75);
+    margin-bottom: 20px;
+    color: #000;
+    border-radius: 11px;
+}
+.bgFlexItemLeftBoxButton div{
+    box-shadow: 0 0 4px rgba(100, 100, 100, 0.3);
+    border-radius: 8px;
+    padding: 3px;
+    transition: all .1s cubic-bezier(.3, .45, .2, .95);
+}
+.bgFlexItemLeftBoxButton div:active{
+    transform: scale(.9);
+}
 #bgFlexItemLeftTitle {
     font-size: 30px;
 }
@@ -156,9 +176,10 @@ a:link:hover {
 
 }
 .bgFlexItemLeftBoxLyric{
-    height: 24px;
+    height: fit-content;
     display: none;
     color: #333;
+    min-height: 17px;
 }
 #bgFlexItemLeftLyric div{
     display: none;
@@ -178,6 +199,30 @@ a:link:hover {
     box-shadow: 0 0 15px rgba(100, 100, 100, 0.3);
     box-shadow: 0 0 15px rgba(100, 100, 100, 0.3);
 }
+@media (max-width:470px){
+    .bgFlexItemLeftBoxDisplay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: calc(100% - 60px) ;
+        border-radius: 0;
+        overflow-y: auto;
+        height: calc(100% - 60px);
+    }
+    :root{
+        --imagewidth: calc(100% - 60px);
+    }
+    #image3 {
+        position: relative;
+        width: calc(100% + 60px);
+        border-radius: 23px;
+        z-index: 3;
+    }
+    #image1{
+        width: 100%;
+    }
+}
+
 @media (max-width:958px){
     .bgFlexItemRiBox{
         display: none;
@@ -195,4 +240,42 @@ a:link:hover {
     display: block;
 }
 
+}
+#Js_NewMessage{
+    display: block;
+    max-width: 280px;
+    width: fit-content;
+    height: max-content;
+    padding: 15px 30px;
+    border-radius: 11px;
+    box-shadow: 0 0 15px rgba(100, 100, 100, 0.1);
+    position: fixed;
+    left: 50%;
+    top: 0px;
+    text-align: center;
+    transform: translate(-50%,-200%);
+    background-color: rgb(var(--color));
+    color: white;
+    z-index: 99999999;
+    animation: message 4s ;
+    animation-timing-function: cubic-bezier(.3, .45, .2, .95);
+}
+@keyframes message {
+    0%,100%{
+        display: none;
+        transform: translate(-50%,-100%) scale(.8) ;
+    }
+    1%,99%{
+        display: block;
+        top: 0px;
+        opacity: 0;
+        transform: translate(-50%,-100%) scale(.8) ;
+    }
+    10%,90%{
+        display: block;
+        opacity: 1;
+        transform: scale(1) translate(-50%,0);
+        top: 20px;
+    }
+    
 }

@@ -2,9 +2,11 @@
 <html lang="zh_CN">
 
 <head>
+    <link rel="icon" href="./icons/icon.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="user-scalable,maximum-scale=1.0, width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="user-scalable=no,maximum-scale=1.0, width=device-width, initial-scale=1.0">
     <title>BlurLyric</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/plyr.css">
@@ -41,16 +43,15 @@
                 <div>
                     <div class="topbarBuLefHead">
 
-                        <img onerror="this.src='http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60'"
-                            id="HeadImg" width="100%" src="1" alt="">
+                        <img
+                            id="HeadImg" width="100%" src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60" alt="">
                     </div>
                     <div class="HeadInfo">
                         <div
                             style="transform: translate(-8px,-8px);border-radius: 11px;position: absolute;width: calc(100%);height: calc(100%);z-index: -1;backdrop-filter: blur(8px);">
                         </div>
                         <div style="display: flex;margin-bottom: 8px;"><img
-                                onerror="this.src='http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60'"
-                                id="HeadInfoImg" src="1" alt="">
+                                id="HeadInfoImg" src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60" alt="">
                             <div id="HeadInfoNickName"></div>
                         </div>
                         <div class="HeadInfoButtom">
@@ -70,7 +71,6 @@
         </div>
     </div>
     <div id="background" class="background">
-
         <div class="bgFlex">
             <div class="bgFlexItem">
                 <div class="bgFlexItemLeftBox">
@@ -86,11 +86,16 @@
                                 <div><a id="bgFlexItemLeftSinger" href=""></a></div>&nbsp-&nbsp
                                 <div><a id="bgFlexItemLeftzjm" href=""></a></div>
                             </div>
-
                         </div>
                         <div class="bgFlexItemLeftBoxText bgFlexItemLeftBoxLyric">
 
-                            <a id="bgFlexItemLeftLyric">a</a>
+                            <a id="bgFlexItemLeftLyric"> </a>
+
+                        </div>
+                        <div class="bgFlexItemLeftBoxButton">
+                            <div onclick="likeThis()"><img height="100%" src="./image/like.svg" alt="" srcset=""></div>
+                            <div onclick="window.open(searchListInformation[listNum][6])"><img height="100%" src="./image/connect device.svg" alt="" srcset=""></div>
+                            
 
                         </div>
                         <audio controls oncanplaythrough='player.play()' οnended="audioFinish()" src=""
@@ -103,10 +108,14 @@
             </div>
         </div>
     </div>
-
-
-    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+    <div style="display: none;">
+        <div id="myPrfIndex">
+            <div class="prf-User-Top-Title"><img id="largerUserHeadImg" src="" alt="" srcset=""><h1 id="page-userNickName"></h1></div><div class="row-index"><h1>我的音乐 </h1><div class="prf-mainBox"><div><div class="prf-row-playList row-Mylove"><div id="row-Mylove"></div>你欢<br>喜的 <div class="abPlayButton" id="MylovePlayButton"></div></div></div><div style="display: grid;grid-template-columns: repeat(1, 1fr);gap: 20px;"><div id="row-myMusicEverDay" class=" prf-row-playList-long prf-row-playList " style=""><div onclick="funDailySongs(true)" id="row-EverDay"></div>每日推荐 <div class="abPlayButton" onclick="funDailySongs(false)"></div></div><div style="display: flex;gap: 20px;"><div id="row-myMusicYoursRadio" class=" prf-row-playList-other prf-row-playList">私人<br>FM <div class="abPlayButton" id="myFMPlayButton"></div></div><div id="prf-row-myRader" class=" prf-row-playList-other prf-row-playList " style=""><div id="row-myRader"></div>私人<br>雷达 <div class="abPlayButton" id="myRaderPlayButton"></div></div></div> </div></div></div>
+        </div>
+    </div>
+    
     <script src="./js/plyr.js"></script>
+    <script src="./js/personalFM.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/playerbuttom.js"></script>
     <script src="./js/lrcToJson.js"></script>

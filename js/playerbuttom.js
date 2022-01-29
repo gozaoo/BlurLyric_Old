@@ -33,7 +33,7 @@ function setMV(title, id, cr, type) {
         const newPlayer = new Plyr(' #a' + id)
       })
   }
-    
+
 }
 
 
@@ -101,3 +101,19 @@ function HengxiangGundong(params) {
 /**HengxiangGundong(document.getElementById('backlab_music'));
 HengxiangGundong(document.getElementById('backlab_MV'));*/
 
+function likeThis(id) {
+  let funID
+  if (id != undefined) {
+    funID = id
+  } else if (musicID != undefined) {
+    funID = musicID
+  }
+  if (funID != undefined) {
+    fetch(cloud + 'like?id=' + funID)
+      .then(r => r.json()).then(res => {
+        if (res.code == 200) {
+          createMessage('操作成功', true)
+        }
+      })
+  }
+}

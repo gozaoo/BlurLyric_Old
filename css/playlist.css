@@ -99,3 +99,13 @@
 	line-height: 42px;
 	color: #666666;
 }
+
+
+
+@media (max-width:470px){
+    .muListReson {
+        margin: 0 0 0 10px;
+        line-height: 42px;
+        color: #666666;
+    }
+}
