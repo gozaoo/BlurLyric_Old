@@ -1,0 +1,10 @@
+<div class="playlist-info">
+    <div class="playlist-img"> <img id="listImgUrl" width="100%" src="" alt=""> </div>
+    <div class="playlist-info-text">
+        <div id="listTitle" class="playlist-info-title"></div>
+        <div class="playlist-info-aritst"><a id="listAritst"></a> </div>
+        <div id="listDescription" class="playlist-info-description"> </div>
+        <div class="playlist-info-c"><button onclick="playMuList()">播放此歌单</button> </div>
+    </div>
+</div>
+<div id="playlist-index-grid-row">嘿嘿！我们的工作准备开展</div>

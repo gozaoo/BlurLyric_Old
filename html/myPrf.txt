@@ -1,0 +1,28 @@
+<div class="prf-User-Top-Title"><img id="largerUserHeadImg" src="" alt="" srcset="">
+    <h1 id="page-userNickName"></h1>
+</div>
+<div class="row-index">
+    <h1>我的音乐 </h1>
+    <div class="prf-mainBox">
+        <div>
+            <div class="prf-row-playList row-Mylove">
+                <div id="row-Mylove"></div>你欢<br>喜的 <div class="abPlayButton" id="MylovePlayButton"></div>
+            </div>
+        </div>
+        <div style="display: grid;grid-template-columns: repeat(1, 1fr);gap: 20px;">
+            <div id="row-myMusicEverDay" class=" prf-row-playList-long prf-row-playList " style="">
+                <div onclick="funDailySongs(true)" id="row-EverDay"></div>每日推荐 <div class="abPlayButton"
+                    onclick="funDailySongs(false)"></div>
+            </div>
+            <div style="display: flex;gap: 20px;">
+                <div id="row-myMusicYoursRadio" class=" prf-row-playList-other prf-row-playList">私人<br>FM
+                    <div onclick="personalFM()" class="abPlayButton" id="myFMPlayButton"></div>
+                </div>
+                <div id="prf-row-myRader" class=" prf-row-playList-other prf-row-playList " style="">
+                    <div id="row-myRader"></div>私人<br>雷达 <div class="abPlayButton" id="myRaderPlayButton">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

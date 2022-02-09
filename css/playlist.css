@@ -89,8 +89,64 @@
     text-overflow: ellipsis;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
-
 }
+
+
+#playlist-index-grid-row .grid-item-line {
+    overflow: hidden;
+    user-select: none;
+    display: flex;
+    padding: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: #00000003;
+    height: 48px;
+    max-height: 48px;
+    border-radius: .75em;
+    word-wrap: none;
+    gap: 8px;
+    box-shadow: 0 6px 12px -4px rgb(0 0 0 / 8%);
+}
+
+#playlist-index-grid-row .grid-item-line:hover {
+    background-color: #0000000e;
+}
+
+#playlist-index-grid-row .grid-item-line img {
+    border-radius: .75em;
+}
+
+#playlist-index-grid-row .grid-item-line-text {
+    height: 48px;
+    font-size: 15px;
+}
+
+#playlist-index-grid-row .grid-item-line-text div {
+    display: block;
+    overflow: hidden;
+    width: initial;
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    -o-text-overflow: ellipsis;
+    font-size: 15px;
+}
+
+#playlist-index-grid-row .grid-item-line-text a {
+    display: block;
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    -o-text-overflow: ellipsis;
+    color: #666;
+    font-size: 15px;
+}
+
 .grid-item-myloveLine{
 	display: flex;
 }

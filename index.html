@@ -19,7 +19,11 @@
 </head>
 
 <body>
+    <img style="position: fixed;
+    z-index: -5;width: 10px;height: 10px;opacity: 0;display: none;" id="imgCache" src="" alt="">
+    <!--背景模糊-->
     <div class="bg1"></div>
+    <!--切换小按钮-->
     <div style="
         position: fixed;
         border-radius: 11px;
@@ -36,22 +40,25 @@
             <img src="../image/ud.png" alt="">
         </div>
     </div>
+    <!--音乐选择部分-->
     <div id="playerBox">
+        <!--顶置栏-->
         <div class="topbar">
             <div class="topbarIndex">
                 <div class="topbarTitle">BlurLyric</div>
                 <div>
                     <div class="topbarBuLefHead">
 
-                        <img
-                            id="HeadImg" width="100%" src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60" alt="">
+                        <img id="HeadImg" width="100%"
+                            src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60" alt="">
                     </div>
                     <div class="HeadInfo">
                         <div
                             style="transform: translate(-8px,-8px);border-radius: 11px;position: absolute;width: calc(100%);height: calc(100%);z-index: -1;backdrop-filter: blur(8px);">
                         </div>
-                        <div style="display: flex;margin-bottom: 8px;"><img
-                                id="HeadInfoImg" src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60" alt="">
+                        <div style="display: flex;margin-bottom: 8px;"><img id="HeadInfoImg"
+                                src="http://s4.music.126.net/style/web2/img/default/default_avatar.jpg?param=60y60"
+                                alt="">
                             <div id="HeadInfoNickName"></div>
                         </div>
                         <div class="HeadInfoButtom">
@@ -67,39 +74,65 @@
                 <input onkeydown="kydone(event);" id="musicInput" type="text" placeholder="请输入音乐">
             </div>
         </div>
+
+        <!--下面的内容-->
         <div id="playerBoxIndex">
+            请稍等，网页正在加载
         </div>
     </div>
+
+    <!--播放器控件界面-->
     <div id="background" class="background">
         <div class="bgFlex">
             <div class="bgFlexItem">
+                <!--左右分区-->
                 <div class="bgFlexItemLeftBox">
                     <div class="bgFlexItemLeftBoxDisplay">
-                        <div class="bgFlexItemLeftBoxImage">
-                            <div class="image1box"><img width="100%" src="" alt="" srcset="" id="image1"></div>
-                            <img width="100%" src="" alt="" srcset="" id="image2">
-                            <img width="100%" src="" alt="" srcset="" id="image3">
-                        </div>
                         <div class="bgFlexItemLeftBoxText">
-                            <div><a id="bgFlexItemLeftTitle" href="">请选择您的音乐。</a></div>
+                            <!--上-->
+                            <div style="user-select: none;" class="bgFlexItemLeftBoxImage">
+                                
+                                <div class="image1box"><img width="100%" src="" alt="" srcset="" id="image1"></div>
+                                <img style="user-select: none;"  width="100%" src="" alt="" srcset="" id="image2">
+                                <img style="user-select: none;" width="100%" src="" alt="" srcset="" id="image3">
+                            </div>
+
+                            <div><a id="bgFlexItemLeftTitle">请选择您的音乐。</a></div>
                             <div class="bgFlexItemLeftOther">
-                                <div><a id="bgFlexItemLeftSinger" href=""></a></div>&nbsp-&nbsp
-                                <div><a id="bgFlexItemLeftzjm" href=""></a></div>
+                                <div><a id="bgFlexItemLeftSinger"></a></div>&nbsp-&nbsp
+                                <div><a id="bgFlexItemLeftzjm"></a></div>
+                            </div>
+                            
+                            <!--下-->
+                            <div class="bgFlexItemLeftBoxButton" style="user-select: none;">
+                                <div id="dislikeButton" style="display: none;" onclick="dislikeThis()"><img
+                                        height="100%" src="./image/dislike.svg" alt="不感兴趣" srcset=""></div>
+                                <div onclick="likeThis()"><img height="100%" src="./image/like.svg" alt="添加到 “我喜欢的” "
+                                        srcset=""></div>
+                                <div onclick="window.open(audio.src)"><img height="100%"
+                                        src="./image/connect device.svg" alt="下载" srcset=""></div>
                             </div>
                         </div>
+
                         <div class="bgFlexItemLeftBoxText bgFlexItemLeftBoxLyric">
 
                             <a id="bgFlexItemLeftLyric"> </a>
 
                         </div>
-                        <div class="bgFlexItemLeftBoxButton">
-                            <div onclick="likeThis()"><img height="100%" src="./image/like.svg" alt="" srcset=""></div>
-                            <div onclick="window.open(searchListInformation[listNum][6])"><img height="100%" src="./image/connect device.svg" alt="" srcset=""></div>
-                            
-
+                        <div class="musicC">
+                            <div class="musicC-view">
+                                <a id="musicNowTime">00:00</a>
+                                <audio controls oncanplaythrough='player.play()' οnended="audioFinish()" src=""
+                                    id="audio"></audio>
+                                    <a id="musicFullTime">00:00</a>
+                            </div>
+                            <div style="user-select: none;" class="musicC-button">
+                                <div onclick="setOneShot()"><img id="ShotIcon" height="100%" src="./image/loop.svg" alt="播放方式调整" srcset=""></div>
+                                <div onclick="play()"><img id="playIcon" height="100%" src="./image/play.svg" alt="开始播放" srcset=""></div>
+                                <div onclick="beforeMusic()"><img height="100%" src="./image/beforeOne.svg" alt="上一个" srcset=""></div>
+                                <div onclick="nextMusic()"><img height="100%" src="./image/nextOne.svg" alt="下一个" srcset=""></div>
+                            </div>
                         </div>
-                        <audio controls oncanplaythrough='player.play()' οnended="audioFinish()" src=""
-                            id="audio"></audio>
                     </div>
                 </div>
             </div>
@@ -110,17 +143,40 @@
     </div>
     <div style="display: none;">
         <div id="myPrfIndex">
-            <div class="prf-User-Top-Title"><img id="largerUserHeadImg" src="" alt="" srcset=""><h1 id="page-userNickName"></h1></div><div class="row-index"><h1>我的音乐 </h1><div class="prf-mainBox"><div><div class="prf-row-playList row-Mylove"><div id="row-Mylove"></div>你欢<br>喜的 <div class="abPlayButton" id="MylovePlayButton"></div></div></div><div style="display: grid;grid-template-columns: repeat(1, 1fr);gap: 20px;"><div id="row-myMusicEverDay" class=" prf-row-playList-long prf-row-playList " style=""><div onclick="funDailySongs(true)" id="row-EverDay"></div>每日推荐 <div class="abPlayButton" onclick="funDailySongs(false)"></div></div><div style="display: flex;gap: 20px;"><div id="row-myMusicYoursRadio" class=" prf-row-playList-other prf-row-playList">私人<br>FM <div class="abPlayButton" id="myFMPlayButton"></div></div><div id="prf-row-myRader" class=" prf-row-playList-other prf-row-playList " style=""><div id="row-myRader"></div>私人<br>雷达 <div class="abPlayButton" id="myRaderPlayButton"></div></div></div> </div></div></div>
+            <div class="prf-User-Top-Title"><img id="largerUserHeadImg" src="" alt="" srcset="">
+                <h1 id="page-userNickName"></h1>
+            </div>
+            <div class="row-index">
+                <h1>我的音乐 </h1>
+                <div class="prf-mainBox">
+                    <div>
+                        <div class="prf-row-playList row-Mylove">
+                            <div id="row-Mylove"></div>你欢<br>喜的 <div class="abPlayButton" id="MylovePlayButton"></div>
+                        </div>
+                    </div>
+                    <div style="display: grid;grid-template-columns: repeat(1, 1fr);gap: 20px;">
+                        <div id="row-myMusicEverDay" class=" prf-row-playList-long prf-row-playList " style="">
+                            <div onclick="funDailySongs(true)" id="row-EverDay"></div>每日推荐 <div class="abPlayButton"
+                                onclick="funDailySongs(false)"></div>
+                        </div>
+                        <div style="display: flex;gap: 20px;">
+                            <div id="row-myMusicYoursRadio" class=" prf-row-playList-other prf-row-playList">私人<br>FM
+                                <div onclick="personalFM()" class="abPlayButton" id="myFMPlayButton"></div>
+                            </div>
+                            <div id="prf-row-myRader" class=" prf-row-playList-other prf-row-playList " style="">
+                                <div id="row-myRader"></div>私人<br>雷达 <div class="abPlayButton" id="myRaderPlayButton">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
     <script src="./js/plyr.js"></script>
-    <script src="./js/personalFM.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/playerbuttom.js"></script>
+    <script src="./js/newMain.js"></script>
     <script src="./js/lrcToJson.js"></script>
     <script src="./js/playerMusic.js"></script>
-    <script src="./js/login.js"></script>
 
 </body>
 

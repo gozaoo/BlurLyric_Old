@@ -1,0 +1,4 @@
+<div class="prf-User-Top-Title"><img id="largerUserHeadImg" src="" alt="" srcset="">
+    <h1 id="page-userNickName"></h1>
+</div>
+<div id="playlist-index-grid-row"></div>

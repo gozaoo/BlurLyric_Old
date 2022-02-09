@@ -26,6 +26,8 @@ var oLRC = {
 
 function createLrcObj(lrc) {
   var lrcs = lrc.split('\n'); //用回车拆分成数组
+
+  let olrcms = [];
   for (var i in lrcs) { //遍历歌词数组
     lrcs[i] = lrcs[i].replace(/(^\s*)|(\s*$)/g, ""); //去除前后空格
     var t = lrcs[i].substring(lrcs[i].indexOf("[") + 1, lrcs[i].indexOf("]")); //取[]间的内容
@@ -46,13 +48,14 @@ function createLrcObj(lrc) {
       for (var k in arr) {
         var t = arr[k].substring(1, arr[k].length - 1); //取[]间的内容
         var s = t.split(":"); //分离:前后文字
-        oLRC.ms.push({ //对象{t:时间,c:歌词}加入ms数组
+        olrcms.push({ //对象{t:时间,c:歌词}加入ms数组
           t: (parseFloat(s[0]) * 60 + parseFloat(s[1])).toFixed(3),
           c: content
         });
       }
     }
   }
+  oLRC.ms = olrcms
   oLRC.ms.sort(function (a, b) { //按时间顺序排序
     return a.t - b.t;
   });
@@ -65,10 +68,10 @@ function createLrcObj(lrc) {
 }
 
 function showLRC() {
-  document.getElementById("lyric").innerHTML = '<li class="lrclab">loading</li><li class="lrclab">loading</li><li class="lrclab">loading</li><li class="lrclab">loading</li><li class="lrclab">loading</li><li class="lrclab">loading</li><li class="lrclab">loading</li>';
+  document.getElementById("lyric").innerHTML = '';
   let s = "";
   for (let i = 0; i < oLRC.ms.length; i++) { //遍历ms数组，把歌词加入列表
-    s += '<li class="lrclab" onclick="player.currentTime=' + (oLRC.ms[i].t - 0.4) + '"> ' + '<div>' + formateTime(oLRC.ms[i].t) + '</div>' + oLRC.ms[i].c + '</li>';
+    s += '<li class="lrclab" onclick="player.currentTime=' + (oLRC.ms[i].t - 0.3) + '"> ' + '<div>' + formateTime(oLRC.ms[i].t) + '</div>' + oLRC.ms[i].c + '</li>';
   }
   document.getElementById("lyric").innerHTML = s;
 }

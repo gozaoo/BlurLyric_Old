@@ -11,7 +11,7 @@ SetLineHeight()
 function LineNoIf() {
   var templineNo
   for (var i = 0; i < oLRC.ms.length; i++) {
-    if (oLRC.ms[i].t <= document.getElementById("audio").currentTime + 0.5) {
+    if (oLRC.ms[i].t <= document.getElementById("audio").currentTime + 0.3) {
       templineNo = i + 1;
     }
   }
@@ -63,6 +63,7 @@ function GetBodyHeight() {
   }
 }
 GetBodyHeight()
+var tempDataOfLyricTopHeight = ''
 
 function TestGunDong() {
   if (bodyWidth >= 958 && audioStatus) {
@@ -75,11 +76,22 @@ function TestGunDong() {
 
     //计算居中后多少像素
     topheight = bodyHeight / 2 - lineNoTop;
-    document.getElementById("lyric").style.transform = "translateY(" + topheight + "px)";
+
+    if (tempDataOfLyricTopHeight != topheight) {
+      tempDataOfLyricTopHeight = topheight
+      document.getElementById("lyric").style.transform = "translateY(" + topheight + "px)";
+    }
 
     canGetBodyHeight = true
   } else {
     canGetBodyHeight = false
   }
-  t = setTimeout('TestGunDong()', 150);
+  t = setTimeout('TestGunDong()', 20);
+}
+
+function MuTime() {
+  if (audioStatus == true) {
+
+  }
+  formateTime(time)
 }

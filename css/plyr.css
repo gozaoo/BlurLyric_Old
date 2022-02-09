@@ -29,27 +29,6 @@
     }
 }
 
-.plyr {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    align-items: center;
-    direction: ltr;
-    display: flex;
-    flex-direction: column;
-    font-family: inherit;
-    font-family: var(--plyr-font-family, inherit);
-    font-variant-numeric: tabular-nums;
-    font-weight: 400;
-    font-weight: var(--plyr-font-weight-regular, 400);
-    line-height: 1.7;
-    line-height: var(--plyr-line-height, 1.7);
-    max-width: 100%;
-    min-width: 200px;
-    position: relative;
-    text-shadow: none;
-    transition: box-shadow .3s ease;
-    z-index: 0
-}
 
 .plyr audio,
 .plyr iframe,
@@ -915,22 +894,8 @@ a.plyr__control:before {
     width: auto
 }
 
-.plyr--audio {
-    display: block
-}
 
-.plyr--audio .plyr__controls {
-    background: #fff;
-    background-color: rgba(246, 246, 255,.75);
-    border-radius: inherit;
-    color: #4a5464;
-    color: var(--plyr-audio-control-color, #4a5464);
-    padding: 10px;
-    border-radius: 11px;
-    padding: var(--plyr-control-spacing, 10px);
-    
-    border-radius: 11px;
-}
+
 
 .plyr--audio .plyr__control.plyr__tab-focus,
 .plyr--audio .plyr__control:hover,

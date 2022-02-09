@@ -1,0 +1,6 @@
+<h1 id="loginGuiTitle">(网易云音乐)</h1>
+<input id="phone" type="text" placeholder="请输入手机号/邮箱">
+<br>
+<input id="password" type="password" placeholder="请输入密码">
+<br>
+<button id="loginButtom" class="whitebutton" onclick="loginButton()" style="height: 48px;">开始认证</button>
