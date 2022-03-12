@@ -145,15 +145,43 @@
     -o-text-overflow: ellipsis;
     color: #666;
     font-size: 15px;
+    
 }
 
 .grid-item-myloveLine{
 	display: flex;
 }
+.muListRight{
+    display: flex;
+    margin-left:auto;
+    height: 42px;
+    align-items: center;
+    color: #666666;
+}
 .muListReson{
-	margin: 0 0 0 40px;
-	line-height: 42px;
-	color: #666666;
+    max-width: fit-content;
+    line-height: 42px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.muListButton{
+  padding-left: 8px;
+    display: flex;
+    gap: 8px;
+    height: 36px;
+    color: #000;
+    cursor: pointer;
+}
+.muListButton div{
+    box-shadow: 0 0 4px rgba(100, 100, 100, 0.5);
+    border-radius: 9px;
+    padding: 3px;
+    transition: all .1s cubic-bezier(.3, .45, .2, .95);
+}
+.muListButton div:active{
+    transform: scale(.9);
 }
 
 

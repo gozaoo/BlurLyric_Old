@@ -7,4 +7,4 @@
         <div class="playlist-info-c"><button onclick="playMuList()">播放此歌单</button> </div>
     </div>
 </div>
-<div id="playlist-index-grid-row">嘿嘿！我们的工作准备开展</div>
+<div id="playlist-index-grid-row">稍等</div>

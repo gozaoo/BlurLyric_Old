@@ -94,15 +94,16 @@ body {
 }
 
 #lyric li {
-	transition: all .9s, color 0s, background .2s cubic-bezier(.3,.5,.25,1), width 0s;
+	transition: all .9s, color 0s, background .3s cubic-bezier(.3,.5,.25,1), width 0s;
 	filter: blur(4px);
-	background-image: linear-gradient(to right, rgba(255, 255, 255, .0), rgba(255, 255, 255, .0), rgba(255, 255, 255, .0));
 	margin-top: 30px;
 	display: block;
 	line-height: 36px;
 	min-height: 36px;
 	border-radius: 11px;
 	padding: 15px 20px;
+	background-image: linear-gradient(to right, rgba(255, 255, 255, .0), rgba(255, 255, 255, .0), rgba(255, 255, 255, .0));
+
 	text-shadow: 0 0 15px rgba(100, 100, 100, 0.1);
 	width: (fit-content + 100px);
 	max-width: 400px;
@@ -129,30 +130,28 @@ body {
 }
 
 #lyric li:hover {
-	filter: blur(0px);
-	background: rgba(255, 255, 255, 0.08);
+	filter: blur(0px);	
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.01),  rgba(255, 255, 255, 0.1));
 	transition: all 1.2s, filter .4s cubic-bezier(.3,.5,.25,1), color 0s, background .15s cubic-bezier(0.30, 0.50, 0.25, 0.90), width 0s;
 }
 
 #lyric li div {
 	position: absolute;
-	width: 170px;
+	width: 250px;
 	left: 100%;
 	padding: 5px;
 	vertical-align: middle;
 	display: table-cell;
-	background-image: linear-gradient(to left bottom, rgba(255, 255, 255, .0), rgba(255, 255, 255, .0), rgba(255, 255, 255, .0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, .0), rgba(255, 255, 255, 0));
+	transition: all .25s cubic-bezier(.3,.5,.25,1);
 	filter: blur(6px);
 	transform: translate(-50%, -15px);
 	pointer-events: none;
 	height: 150%;
 	color: rgb(160, 160, 160, 0);
 	text-align: end;
-	transition: all .3s cubic-bezier(0.30, 0.50, 0.25, 0.90);
 }
 
 #lyric li:hover div {
-	background-image: linear-gradient(to left bottom, rgba(255, 255, 255, .18), rgba(255, 255, 255, .08), rgba(255, 255, 255, .02), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, .0), rgba(255, 255, 255, 0));
 	color: rgb(180, 180, 180, 1);
 	transform: translate(-100%, -15px);
 	filter: blur(0px);

@@ -9,13 +9,12 @@
     transform: translate(0, -25px) scale(1);
     opacity: 1;
     position: fixed;
-    backdrop-filter: blur(4px);
     z-index: 5;
     transition: all 0.5s cubic-bezier(0.30, 0.50, 0.25, 0.90);
 }
 
 #playerBoxIndex {
-    padding: 0px 10vw 96px 10vw;
+    padding: 54px 10vw 96px 10vw;
     background-color: white;
     height: calc(100% - 108px);
     overflow-y: auto;
@@ -24,7 +23,7 @@
 
 @media (max-width: 1336px) {
     #playerBoxIndex {
-        padding: 0px 5vw 96px 5vw;
+        padding: 54px 5vw 96px 5vw;
 
     }
 

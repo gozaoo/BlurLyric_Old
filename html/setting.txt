@@ -1,0 +1,81 @@
+<div style="display: grid;gap: 8px;">
+    <h1 id="page-userNickName">设置</h1>
+    <div>
+        <h2 id="page-userNickName">音质</h2>
+        <HR style=" FILTER: alpha (opacity = 100, finishopacity =0 , style= 3 );color:#00000020" cb 9 SIZE=1 />
+    </div>
+    <div class="settingLine">
+        <div>音质优先程度</div>
+        <div>
+            <div class="setSelectBox" id="brDisplay">
+                <style onload="document.getElementById('brDisplay').innerText = getFmBr(br)"></style>
+
+            </div>
+            <div class="setSelectBoxList">
+                <div onclick="setBr(128000)">
+                    128Kbps 普通
+                </div>
+                <div onclick="setBr(192000)">
+                    192Kbps 良好
+                </div>
+                <div onclick="setBr(320000)">
+                    320Kbps 极高
+                </div>
+                <div onclick="setBr(999000)">
+                    无损
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--播放器设置-->
+    <div>
+        <h2 id="page-userNickName">画面</h2>
+        <HR style=" FILTER: alpha (opacity = 100, finishopacity =0 , style= 3 );color:#00000020" cb 9 SIZE=1 />
+    </div>
+    <div class="settingLine">
+        <div>画面设置</div>
+        <div>
+            <div class="setSelectBox" id="bgTypeDisplay">
+                <style onload="document.getElementById('bgTypeDisplay').innerText = getBGtype()"></style>
+
+            </div>
+            <div class="setSelectBoxList">
+                <div onclick="setBGtype(0)">
+                    使用模糊
+                </div>
+                <div onclick="setBGtype(1)">
+                    显示 暗专辑封面
+                </div>
+                <div onclick="setBGtype(2)">
+                    无背景
+                </div>
+                <div onclick="">
+                    (no)使用专辑主题色
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="settingLine">
+        <div>歌词滚动设置</div>
+        <div>
+            <div class="setSelectBox" id="LyGdTypeDisplay">
+                舒缓顺畅
+                <!-- style onload="document.getElementById('bgTypeDisplay').innerText = getLyGdType()"></style -->
+
+            </div>
+            <div class="setSelectBoxList">
+                <div onclick="">
+                    舒缓顺畅
+                </div>
+                <div onclick="">
+                    快速精准
+                </div>
+                <div onclick="">
+                    无
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

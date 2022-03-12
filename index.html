@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="zh_CN">
 
 <head>
     <link rel="icon" href="./icons/icon.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="user-scalable=no,maximum-scale=1.0, width=device-width, initial-scale=1.0">
+    <meta http-equiv="If-None-Match" content="" fd56273325a2114818df4f29a628226d"" />
     <title>BlurLyric</title>
+
+
+    <!--UC强制全屏-->
+    <meta name="x5-fullscreen" content="true">
+    <!--QQ强制竖屏-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/plyr.css">
     <link rel="stylesheet" href="./css/SearchBar.css">
@@ -22,24 +30,8 @@
     <img style="position: fixed;
     z-index: -5;width: 10px;height: 10px;opacity: 0;display: none;" id="imgCache" src="" alt="">
     <!--背景模糊-->
-    <div class="bg1"></div>
     <!--切换小按钮-->
-    <div style="
-        position: fixed;
-        border-radius: 11px;
-        width: max-content;
-        transition: all 0.2s cubic-bezier(.20,.60,.4,1);
-        z-index: 102;
-        padding: 6px;
-        opacity: 1.0;
-        top: 4px;
-        left: 100%;
-        transform: translate(-60px,0);
-        ">
-        <div onclick="ud()" class="musicbuttom" id="musicplay" style="margin: 0;">
-            <img src="../image/ud.png" alt="">
-        </div>
-    </div>
+
     <!--音乐选择部分-->
     <div id="playerBox">
         <!--顶置栏-->
@@ -70,30 +62,34 @@
                     </div>
                 </div>
 
-
                 <input onkeydown="kydone(event);" id="musicInput" type="text" placeholder="请输入音乐">
+                <div class="topbarButton" onclick="setMainBox('./html/setting.txt')">设置</div>
             </div>
         </div>
 
         <!--下面的内容-->
         <div id="playerBoxIndex">
-            请稍等，网页正在加载
+            
         </div>
     </div>
 
     <!--播放器控件界面-->
     <div id="background" class="background">
+        <div class="bg1" id="bg1"></div>
+        <div id="mouseDown" style="backdrop-filter: blur(0px); background-color: rgb(105, 105, 105);">
+            <div id="mouseDownWhitePlace"></div>
+        </div>
         <div class="bgFlex">
-            <div class="bgFlexItem">
+            <div class="bgFlexItem bgFlexItemLB">
                 <!--左右分区-->
                 <div class="bgFlexItemLeftBox">
                     <div class="bgFlexItemLeftBoxDisplay">
                         <div class="bgFlexItemLeftBoxText">
                             <!--上-->
                             <div style="user-select: none;" class="bgFlexItemLeftBoxImage">
-                                
+                                <div id="playerDisplayQuitly" style="z-index:200;position: absolute;color: #fff;background-color: hsla(0,0%,50%,.20);padding: 4px 6px;border-radius: 7px;left: 12px;top: 8px;overflow: hidden;backdrop-filter: blur(8px);">.</div>
                                 <div class="image1box"><img width="100%" src="" alt="" srcset="" id="image1"></div>
-                                <img style="user-select: none;"  width="100%" src="" alt="" srcset="" id="image2">
+                                <img style="user-select: none;" width="100%" src="" alt="" srcset="" id="image2">
                                 <img style="user-select: none;" width="100%" src="" alt="" srcset="" id="image3">
                             </div>
 
@@ -102,7 +98,7 @@
                                 <div><a id="bgFlexItemLeftSinger"></a></div>&nbsp-&nbsp
                                 <div><a id="bgFlexItemLeftzjm"></a></div>
                             </div>
-                            
+
                             <!--下-->
                             <div class="bgFlexItemLeftBoxButton" style="user-select: none;">
                                 <div id="dislikeButton" style="display: none;" onclick="dislikeThis()"><img
@@ -124,13 +120,17 @@
                                 <a id="musicNowTime">00:00</a>
                                 <audio controls oncanplaythrough='player.play()' οnended="audioFinish()" src=""
                                     id="audio"></audio>
-                                    <a id="musicFullTime">00:00</a>
+                                <a id="musicFullTime">00:00</a>
                             </div>
                             <div style="user-select: none;" class="musicC-button">
-                                <div onclick="setOneShot()"><img id="ShotIcon" height="100%" src="./image/loop.svg" alt="播放方式调整" srcset=""></div>
-                                <div onclick="play()"><img id="playIcon" height="100%" src="./image/play.svg" alt="开始播放" srcset=""></div>
-                                <div onclick="beforeMusic()"><img height="100%" src="./image/beforeOne.svg" alt="上一个" srcset=""></div>
-                                <div onclick="nextMusic()"><img height="100%" src="./image/nextOne.svg" alt="下一个" srcset=""></div>
+                                <div onclick="setOneShot()"><img id="ShotIcon" height="100%" src="./image/loop.svg"
+                                        alt="播放方式调整" srcset=""></div>
+                                <div onclick="play()"><img id="playIcon" height="100%" src="./image/play.svg" alt="开始播放"
+                                        srcset=""></div>
+                                <div onclick="beforeMusic()"><img height="100%" src="./image/beforeOne.svg" alt="上一个"
+                                        srcset=""></div>
+                                <div onclick="nextMusic()"><img height="100%" src="./image/nextOne.svg" alt="下一个"
+                                        srcset=""></div>
                             </div>
                         </div>
                     </div>
@@ -141,43 +141,14 @@
             </div>
         </div>
     </div>
-    <div style="display: none;">
-        <div id="myPrfIndex">
-            <div class="prf-User-Top-Title"><img id="largerUserHeadImg" src="" alt="" srcset="">
-                <h1 id="page-userNickName"></h1>
-            </div>
-            <div class="row-index">
-                <h1>我的音乐 </h1>
-                <div class="prf-mainBox">
-                    <div>
-                        <div class="prf-row-playList row-Mylove">
-                            <div id="row-Mylove"></div>你欢<br>喜的 <div class="abPlayButton" id="MylovePlayButton"></div>
-                        </div>
-                    </div>
-                    <div style="display: grid;grid-template-columns: repeat(1, 1fr);gap: 20px;">
-                        <div id="row-myMusicEverDay" class=" prf-row-playList-long prf-row-playList " style="">
-                            <div onclick="funDailySongs(true)" id="row-EverDay"></div>每日推荐 <div class="abPlayButton"
-                                onclick="funDailySongs(false)"></div>
-                        </div>
-                        <div style="display: flex;gap: 20px;">
-                            <div id="row-myMusicYoursRadio" class=" prf-row-playList-other prf-row-playList">私人<br>FM
-                                <div onclick="personalFM()" class="abPlayButton" id="myFMPlayButton"></div>
-                            </div>
-                            <div id="prf-row-myRader" class=" prf-row-playList-other prf-row-playList " style="">
-                                <div id="row-myRader"></div>私人<br>雷达 <div class="abPlayButton" id="myRaderPlayButton">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <script src="./js/plyr.js"></script>
     <script src="./js/newMain.js"></script>
     <script src="./js/lrcToJson.js"></script>
     <script src="./js/playerMusic.js"></script>
 
+    <script src="./js/rgbaster.js"></script>
+    <script src="./js/ui.js"></script>
 </body>
 
 </html>

@@ -52,16 +52,18 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
     background: rgb(104, 104, 104);
 }
 .topbar{
-    backdrop-filter: blur(36px) brightness(1.6);
+    position: absolute;
+    backdrop-filter: blur(8px);
     height: 54px;
+    width: 100%;
     min-width: 600px;
-    background-color: #fff;
+    background-color: #ffffff70;
     z-index: 200;
     
 }
 .topbarIndex{
     padding: 0px 10vw 0px 10vw;
-    display:flex
+    display:flex;gap: 8px
 }
 
 @media (max-width: 1336px) {
@@ -93,11 +95,11 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
     border-left: 3px solid #000;
     height: 24px;
     content: "";
-    margin: 0 24px;
+    margin: 0 16px 0 24px;
 }
 
 .topbarBuLefHead{
-    padding: 8px 8px 8px 8px;
+    padding: 8px 0px;
     margin: 0 4px;
     font-size: 0px;
     line-height: 0px;
@@ -127,7 +129,7 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
     opacity: 0;
     background-color: hsla(0,0%,100%,.50);
     border-radius: 11px;
-    transform: translate(0,-54px);
+    transform: translate(-8px,-54px);
     z-index: 200;
     box-shadow: 0 6px 12px -4px rgb(0 0 0 / 8%);
 }
@@ -171,6 +173,28 @@ body::-webkit-scrollbar-track {/*滚动条里面轨道*/
     overflow: hidden;
     
 }
+
+.topbarButton{
+    height: 36px;
+    border-radius: 11px;
+    margin: 9px 0;
+    background-color: rgba(246, 246, 255, 1.0);
+    transition: all 0.2s cubic-bezier(0.30, 0.50, 0.25, 0.90);
+    padding: 0 12px;
+    line-height:36px;
+    user-select: none;
+    cursor: pointer;
+}
+.topbarButton:HOver{
+    height: 36px;
+    border-radius: 11px;
+    margin: 9px 0;
+    background-color: rgb(238, 238, 255);
+}
+.topbarButton:active{
+    transform: scale(0.96);
+}
+
 .topbarBuLef{
     padding: 10px 8px 0 8px;
     margin: 0 4px;

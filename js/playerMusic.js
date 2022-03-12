@@ -18,6 +18,7 @@ function LineNoIf() {
   if (templineNo != undefined) {
     lineNo = templineNo
   }
+  console
   t = setTimeout('LineNoIf()', 16);
 }
 var lis = ul.getElementsByTagName("li")
@@ -40,26 +41,37 @@ function SetLineHeight() {
     }
     displayLineNo = lineNo
   }
-  t = setTimeout('SetLineHeight()', 16);
+  t = setTimeout('SetLineHeight()', 32);
 }
 var bodyHeight
 var topheight
 var bodyWidth
 canGetBodyHeight = true
-
+backAfterMain = true
+var params = {
+	left: 0,
+	top: 0,
+	currentX: 0,
+	currentY: 0,
+	flag: false
+};
 function GetBodyHeight() {
   if (canGetBodyHeight) {
     bodyHeight = document.body.clientHeight
     bodyWidth = document.body.clientWidth
     setTimeout(() => {
       GetBodyHeight()
-    }, 1000);
+    }, 1200);
   } else {
     setTimeout(() => {
       bodyHeight = document.body.clientHeight
       bodyWidth = document.body.clientWidth
       GetBodyHeight()
-    }, 1500);
+    }, 1800);
+  }
+  if (backAfterMain == true && params.flag == false){
+    params.top = bodyHeight - 30;
+    document.getElementById('background').style.top = bodyHeight -30+'px'
   }
 }
 GetBodyHeight()
