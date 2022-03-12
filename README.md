@@ -1,6 +1,14 @@
 # BlurLyric
 一个用于Neteasecloudmusicapi的UI
 
+# 停更通知！
+停更日期 2022.3.12
+截止日期 暑假
+
+等我。
+
+<a herf="https://github.com/qier222/YesPlayMusic">替代产品：yesplaymusic https://github.com/qier222/YesPlayMusic</a>
+
 # 如何使用？
 丢掉到NeteaseCloudMusicApi环境里，然后复制上面的源码到public文件夹里就好啦
 
