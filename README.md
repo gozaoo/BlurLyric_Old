@@ -1,11 +1,9 @@
-# BlurLyric
+# BlurLyric v1
 一个用于Neteasecloudmusicapi的UI
 
 # 停更通知！
 停更日期 2022.3.12
-截止日期 暑假
-
-等我。
+## 本项目已经完全停止了维护，请前往最新项目BlurLyric 2 https://github.com/Project-And-Factory/BlurLyric
 
 <a herf="https://github.com/qier222/YesPlayMusic">替代产品：yesplaymusic https://github.com/qier222/YesPlayMusic</a>
 
